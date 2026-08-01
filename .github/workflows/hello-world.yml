@@ -13,6 +13,5 @@ jobs:
       contents: read
 
     steps:
-      - run: echo "Hello, GitHub Actions!"
-      - run: echo "hoge"
-      - run: date
+      - uses: actions/checkout@v7
+      - run: cat README.md
