@@ -14,4 +14,5 @@ jobs:
 
     steps:
       - run: echo "Hello, GitHub Actions!"
+      - run: echo "hoge"
       - run: date
