@@ -1,18 +1,14 @@
-name: CI
+build:
+  runs-on: ubuntu-latest
+  permissions:
+    contesnts: write
+  steps:
+    - uses: actions/checkout@v7
+    - uses: actions/setup-node@v7
 
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
-
-jobs:
-  hello-world:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-
-    steps:
-      - uses: tacker0/github-actions-hands-on@main
-      - uses: actions/checkout@v7
-      - run: cat README.md
+    - run: npm install
+    - run: npm run build
+    - uses: actions/upload-artifact@v7
+      with:
+        name: 'js-app'
+        path: dist
