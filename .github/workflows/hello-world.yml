@@ -13,5 +13,6 @@ jobs:
       contents: read
 
     steps:
+      - uses: tacker0/github-actions-hands-on@main
       - uses: actions/checkout@v7
       - run: cat README.md
